@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="theme-color" content="#800000">
+    <meta name="description" content="रुद्र फटाका मार्ट - स्टॉल नं. ४२, खंडोबानगर, शेवगाव. दर्जेदार, सुरक्षित व रंगीबेरंगी फटाक्यांचे भव्य दालन. प्रोप्रा. ऋषिकेश वावरे, प्रोप्रा. भारत म्हस्के.">
+    <title>रुद्र फटाका मार्ट | स्टॉल नं. ४२, शेवगाव | भव्य फटाका दालन</title>
+
+    <!-- Google Fonts for Authentic Marathi Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gotu&family=Poppins:wght@400;600;700;800&family=Rozha+One&family=Yatra+One&display=swap" rel="stylesheet">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Background Interactive Fireworks Canvas -->
+    <canvas id="fireworksCanvas"></canvas>
+
+    <!-- Traditional Toran / Festive Marigold Border -->
+    <div class="toran-garland" aria-hidden="true">
+        <div class="garland-rope"></div>
+        <div class="garland-flowers">
+            <span class="flower f-orange"></span>
+            <span class="leaf"></span>
+            <span class="flower f-yellow"></span>
+            <span class="flower f-orange"></span>
+            <span class="leaf"></span>
+            <span class="flower f-yellow"></span>
+            <span class="flower f-orange"></span>
+            <span class="leaf"></span>
+            <span class="flower f-yellow"></span>
+            <span class="flower f-orange"></span>
+            <span class="leaf"></span>
+            <span class="flower f-yellow"></span>
+            <span class="flower f-orange"></span>
+            <span class="leaf"></span>
+            <span class="flower f-yellow"></span>
+            <span class="flower f-orange"></span>
+            <span class="leaf"></span>
+            <span class="flower f-yellow"></span>
+            <span class="flower f-orange"></span>
+            <span class="leaf"></span>
+            <span class="flower f-yellow"></span>
+            <span class="flower f-orange"></span>
+        </div>
+    </div>
+
+    <!-- Top Auspicious & Greeting Bar -->
+    <header class="top-announcement-bar">
+        <div class="container announcement-inner">
+            <div class="auspicious-shloka">
+                <span>॥ श्री गणेशाय नमः ॥</span>
+                <span class="divider-dot">•</span>
+                <span>॥ शुभ दीपावली ॥</span>
+                <span class="divider-dot">•</span>
+                <span>॥ लक्ष्मी प्रसन्न ॥</span>
+            </div>
+            <div class="main-diwali-greeting">
+                <span class="sparkle-icon">✨</span>
+                <p class="greeting-text">आमच्या असंख्य ग्राहकांना दीपावलीच्या हार्दिक शुभेच्छा!</p>
+                <span class="sparkle-icon">✨</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Header -->
+    <nav class="main-navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="nav-brand">
+                <span class="brand-stall-badge">स्टॉल ४२</span>
+                <span class="brand-title">रुद्र फटाका मार्ट</span>
+            </a>
+
+            <div class="nav-links" id="navLinks">
+                <a href="#home" class="nav-link active">मुख्य पृष्ठ</a>
+                <a href="#products" class="nav-link">फटाक्यांचे प्रकार</a>
+                <a href="#special-diwali" class="nav-link">दिवाळी विशेष</a>
+                <a href="#owners" class="nav-link">संचालक माहिती</a>
+                <a href="#location" class="nav-link">दुकान पत्ता</a>
+                <a href="#safety" class="nav-link">सुरक्षा नियम</a>
+            </div>
+
+            <div class="nav-cta">
+                <button type="button" class="btn-nav-call" onclick="openContactModal('call')">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                    कॉल करा
+                </button>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="मेनू उघडा">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="diwali-pattern-overlay"></div>
+        <div class="container hero-content">
+
+            <!-- Grand Stall Badge -->
+            <div class="hero-stall-highlight animate-pop">
+                <span class="diya-glow-icon left">🪔</span>
+                <span class="badge-text">🎪 शेवगावचे नंबर १ फटाका दालन • स्टॉल नंबर ४२ 🎪</span>
+                <span class="diya-glow-icon right">🪔</span>
+            </div>
+
+            <!-- Main Shop Heading -->
+            <h1 class="shop-main-title">
+                रुद्र फटाका मार्ट
+            </h1>
+
+            <!-- Subheading -->
+            <p class="shop-subheading">
+                आपल्या दिवाळीचा आनंद द्विगुणित करा!
+            </p>
+
+            <p class="hero-location-line">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                खंडोबानगर, स्टॉल नं. ४२, शेवगाव (जि. अहिल्यानगर)
+            </p>
+
+            <!-- 3 Main Large Contact Buttons (Explicit User Requirement) -->
+            <div class="hero-main-cta-group">
+                <!-- 1. कॉल करा -->
+                <button type="button" class="cta-btn cta-btn-call" onclick="openContactModal('call')">
+                    <span class="btn-icon">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                    </span>
+                    <span class="btn-text-wrap">
+                        <span class="btn-main-label">कॉल करा</span>
+                        <span class="btn-sub-label">थेट फोनवर बोला</span>
+                    </span>
+                </button>
+
+                <!-- 2. WhatsApp वर संपर्क करा -->
+                <button type="button" class="cta-btn cta-btn-whatsapp" onclick="openContactModal('whatsapp')">
+                    <span class="btn-icon">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm5.78 14.07c-.24.68-1.39 1.3-1.92 1.38-.49.07-1.12.1-3.23-.77-2.7-1.12-4.44-3.87-4.57-4.05-.14-.18-1.09-1.45-1.09-2.77 0-1.32.69-1.97.94-2.23.24-.26.54-.33.72-.33.18 0 .36 0 .52.01.17.01.4.06.61.57.24.57.81 1.97.88 2.12.07.15.12.33.02.53-.09.2-.15.33-.29.5-.15.17-.31.38-.44.51-.15.15-.3.31-.13.61.17.29.76 1.25 1.63 2.02 1.12.99 2.07 1.3 2.36 1.45.29.15.46.13.63-.07.17-.2.74-.86.94-1.16.2-.29.4-.24.68-.14.28.1 1.78.84 2.08.99.3.15.51.23.58.36.07.12.07.72-.17 1.4z"/></svg>
+                    </span>
+                    <span class="btn-text-wrap">
+                        <span class="btn-main-label">WhatsApp वर संपर्क करा</span>
+                        <span class="btn-sub-label">मेसेज पाठवा व माहिती घ्या</span>
+                    </span>
+                </button>
+
+                <!-- 3. आमचे दुकान कुठे आहे ते पहा -->
+                <a href="#location" class="cta-btn cta-btn-map">
+                    <span class="btn-icon">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M20.5 3l-.16.03L15 5.1 9 3 3.36 4.9c-.21.07-.36.25-.36.48V20.5c0 .28.22.5.5.5l.16-.03L9 18.9l6 2.1 5.64-1.9c.21-.07.36-.25.36-.48V3.5c0-.28-.22-.5-.5-.5zM15 19l-6-2.11V5l6 2.11V19z"/></svg>
+                    </span>
+                    <span class="btn-text-wrap">
+                        <span class="btn-main-label">आमचे दुकान कुठे आहे ते पहा</span>
+                        <span class="btn-sub-label">स्टॉल नं. ४२, खंडोबानगर, शेवगाव</span>
+                    </span>
+                </a>
+            </div>
+
+            <!-- Quick Key Highlights -->
+            <div class="hero-highlights-strip">
+                <div class="highlight-item">
+                    <span class="highlight-icon">🎆</span>
+                    <span class="highlight-text">१००% अस्सल व दर्जेदार फटाके</span>
+                </div>
+                <div class="highlight-item">
+                    <span class="highlight-icon">💰</span>
+                    <span class="highlight-text">वाजवी व किफायतशीर दर</span>
+                </div>
+                <div class="highlight-item">
+                    <span class="highlight-icon">👶</span>
+                    <span class="highlight-text">मुलांसाठी खास सुरक्षित फटाके</span>
+                </div>
+                <div class="highlight-item">
+                    <span class="highlight-icon">🤝</span>
+                    <span class="highlight-text">शेवगावमधील विश्वासू विक्रेते</span>
+                </div>
+            </div>
+
+            <!-- Interactive 'Light a Diya' Celebration Feature -->
+            <div class="interactive-diya-box">
+                <button type="button" id="lightDiyaBtn" class="diya-action-btn" title="दिवा लावण्यासाठी क्लिक करा">
+                    <span class="diya-flame-icon">🔥</span>
+                    <span class="diya-base-icon">🪔</span>
+                    <span class="diya-btn-text">येथे क्लिक करा आणि शुभ दिवा लावा!</span>
+                </button>
+                <p id="diyaMessage" class="diya-greeting-msg">🪔 शुभम करोति कल्याणम्! आपली दिवाळी सुख-समृद्धीची जावो!</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Shop Owners Information Section (Prominently Displayed) -->
+    <section class="owners-section" id="owners">
+        <div class="container">
+            <div class="section-title-wrap">
+                <span class="section-badge">दुकान संचालक व मालक</span>
+                <h2 class="section-title">आमच्याशी थेट संपर्क साधा</h2>
+                <div class="title-underline">
+                    <span class="sparkle">✦</span>
+                    <span class="line"></span>
+                    <span class="diya">🪔</span>
+                    <span class="line"></span>
+                    <span class="sparkle">✦</span>
+                </div>
+                <p class="section-subtitle">कोणत्याही माहितीसाठी किंवा ऑर्डरसाठी आमच्याशी थेट फोन किंवा व्हॉट्सॲपवर संपर्क करा.</p>
+            </div>
+
+            <div class="owners-grid">
+                <!-- Owner 1: ऋषिकेश वावरे -->
+                <div class="owner-card">
+                    <div class="owner-badge">प्रोप्राईटर</div>
+                    <div class="owner-avatar">
+                        <div class="avatar-circle">
+                            <span class="avatar-initial">ऋ</span>
+                        </div>
+                    </div>
+                    <h3 class="owner-name">प्रोप्रा. ऋषिकेश वावरे</h3>
+                    <p class="owner-role">रुद्र फटाका मार्ट, शेवगाव</p>
+                    
+                    <div class="phone-display">
+                        <span class="phone-label">संपर्क क्रमांक:</span>
+                        <a href="tel:8669710695" class="phone-number">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                            8669710695
+                        </a>
+                        <span class="marathi-digits">(8669710695)</span>
+                    </div>
+
+                    <div class="owner-actions">
+                        <a href="tel:8669710695" class="owner-btn btn-call" aria-label="ऋषिकेश वावरे यांना कॉल करा">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                            कॉल करा
+                        </a>
+                        <a href="https://wa.me/918669710695?text=नमस्कार%20ऋषिकेशजी,%20मला%20रुद्र%20फटाका%20मार्ट%20(स्टॉल%20नं.%20४२)%20मधून%20फटाक्यांविषयी%20माहिती%20हवी%20आहे." target="_blank" rel="noopener" class="owner-btn btn-wa" aria-label="ऋषिकेश वावरे यांना WhatsApp करा">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm5.78 14.07c-.24.68-1.39 1.3-1.92 1.38-.49.07-1.12.1-3.23-.77-2.7-1.12-4.44-3.87-4.57-4.05-.14-.18-1.09-1.45-1.09-2.77 0-1.32.69-1.97.94-2.23.24-.26.54-.33.72-.33.18 0 .36 0 .52.01.17.01.4.06.61.57.24.57.81 1.97.88 2.12.07.15.12.33.02.53-.09.2-.15.33-.29.5-.15.17-.31.38-.44.51-.15.15-.3.31-.13.61.17.29.76 1.25 1.63 2.02 1.12.99 2.07 1.3 2.36 1.45.29.15.46.13.63-.07.17-.2.74-.86.94-1.16.2-.29.4-.24.68-.14.28.1 1.78.84 2.08.99.3.15.51.23.58.36.07.12.07.72-.17 1.4z"/></svg>
+                            WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Owner 2: भारत म्हस्के -->
+                <div class="owner-card">
+                    <div class="owner-badge">प्रोप्राईटर</div>
+                    <div class="owner-avatar">
+                        <div class="avatar-circle">
+                            <span class="avatar-initial">भा</span>
+                        </div>
+                    </div>
+                    <h3 class="owner-name">प्रोप्रा. भारत म्हस्के</h3>
+                    <p class="owner-role">रुद्र फटाका मार्ट, शेवगाव</p>
+                    
+                    <div class="phone-display">
+                        <span class="phone-label">संपर्क क्रमांक:</span>
+                        <a href="tel:9604091262" class="phone-number">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                            9604091262
+                        </a>
+                        <span class="marathi-digits">(९६०४०९१२६२)</span>
+                    </div>
+
+                    <div class="owner-actions">
+                        <a href="tel:9604091262" class="owner-btn btn-call" aria-label="भारत म्हस्के यांना कॉल करा">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                            कॉल करा
+                        </a>
+                        <a href="https://wa.me/919604091262?text=नमस्कार%20भारतजी,%20मला%20रुद्र%20फटाका%20मार्ट%20(स्टॉल%20नं.%20४२)%20मधून%20फटाक्यांविषयी%20माहिती%20हवी%20आहे." target="_blank" rel="noopener" class="owner-btn btn-wa" aria-label="भारत म्हस्के यांना WhatsApp करा">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm5.78 14.07c-.24.68-1.39 1.3-1.92 1.38-.49.07-1.12.1-3.23-.77-2.7-1.12-4.44-3.87-4.57-4.05-.14-.18-1.09-1.45-1.09-2.77 0-1.32.69-1.97.94-2.23.24-.26.54-.33.72-.33.18 0 .36 0 .52.01.17.01.4.06.61.57.24.57.81 1.97.88 2.12.07.15.12.33.02.53-.09.2-.15.33-.29.5-.15.17-.31.38-.44.51-.15.15-.3.31-.13.61.17.29.76 1.25 1.63 2.02 1.12.99 2.07 1.3 2.36 1.45.29.15.46.13.63-.07.17-.2.74-.86.94-1.16.2-.29.4-.24.68-.14.28.1 1.78.84 2.08.99.3.15.51.23.58.36.07.12.07.72-.17 1.4z"/></svg>
+                            WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fast Call Banner -->
+            <div class="direct-call-alert">
+                <span class="bell-icon">🔔</span>
+                <span class="alert-text">आमच्या स्टॉलवर गर्दी होण्यापूर्वीच आपले आवडते फटाके नक्की करण्यासाठी आजच संपर्क साधा!</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Categories Section -->
+    <section class="products-section" id="products">
+        <div class="container">
+            <div class="section-title-wrap">
+                <span class="section-badge">उपलब्ध फटाक्यांचे प्रकार</span>
+                <h2 class="section-title">आमच्या दुकानातील फटाके</h2>
+                <div class="title-underline">
+                    <span class="sparkle">✦</span>
+                    <span class="line"></span>
+                    <span class="diya">🪔</span>
+                    <span class="line"></span>
+                    <span class="sparkle">✦</span>
+                </div>
+                <p class="section-subtitle">सर्व प्रकारच्या प्रसिद्ध आणि दर्जेदार फटाक्यांची भव्य व्हरायटी आमच्या स्टॉलवर उपलब्ध आहे.</p>
+            </div>
+
+            <!-- Product Cards Grid -->
+            <div class="products-grid">
+
+                <!-- 1. फुलबाज्या -->
+                <article class="product-card">
+                    <div class="card-badge">सदाबहार आवड</div>
+                    <div class="product-img-box">
+                        <img src="assets/images/sparkler.jpg" alt="फुलबाज्या - रुद्र फटाका मार्ट" loading="lazy">
+                        <div class="img-overlay">
+                            <span class="sparkler-anim">✨</span>
+                        </div>
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-name">फुलबाज्या</h3>
+                        <p class="product-marathi-tag">(Sparklers - सोनेरी, रुपेरी व रंगीत)</p>
+                        <p class="product-desc">
+                            लहान मुलांपासून मोठ्यांपर्यंत सर्वांच्या आवडीच्या, धूरविरहित आणि सुरक्षित अशा विविध आकारांतील मनमोहक फुलबाज्या.
+                        </p>
+                        <div class="product-features">
+                            <span class="pill">सुरक्षित व धूरविरहित</span>
+                            <span class="pill">विविध आकार उपलब्ध</span>
+                        </div>
+                        <div class="product-status-box">
+                            <span class="availability-badge">✓ दुकानात उपलब्ध</span>
+                            <button type="button" class="btn-inquire" onclick="inquireProduct('फुलबाज्या')">चौकशी करा</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 2. अनार (कारंजे) -->
+                <article class="product-card">
+                    <div class="card-badge">भव्य रोषणाई</div>
+                    <div class="product-img-box">
+                        <img src="assets/images/anar.jpg" alt="अनार - रुद्र फटाका मार्ट" loading="lazy">
+                        <div class="img-overlay">
+                            <span class="sparkler-anim">🌋</span>
+                        </div>
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-name">अनार (झाड / कारंजे)</h3>
+                        <p class="product-marathi-tag">(Flower Pots - रंगीबेरंगी कारंजे)</p>
+                        <p class="product-desc">
+                            उंच उडणारे सोनेरी, रुपेरी, लाल आणि हिरव्या रंगांचे मनमोहक प्रकाशझोत. अंगणात आणि घरासमोर दिवाळीची खरी शोभा.
+                        </p>
+                        <div class="product-features">
+                            <span class="pill">उंच प्रकाश फवारा</span>
+                            <span class="pill">रंगीबेरंगी शेड्स</span>
+                        </div>
+                        <div class="product-status-box">
+                            <span class="availability-badge">✓ दुकानात उपलब्ध</span>
+                            <button type="button" class="btn-inquire" onclick="inquireProduct('अनार (कारंजे)')">चौकशी करा</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 3. चक्र -->
+                <article class="product-card">
+                    <div class="card-badge">पारंपरिक पसंती</div>
+                    <div class="product-img-box">
+                        <img src="assets/images/chakra.jpg" alt="चक्र - रुद्र फटाका मार्ट" loading="lazy">
+                        <div class="img-overlay">
+                            <span class="sparkler-anim">💫</span>
+                        </div>
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-name">चक्र</h3>
+                        <p class="product-marathi-tag">(Ground Chakkars - वेगवान गिरक्या)</p>
+                        <p class="product-desc">
+                            जमिनीवर सुरेख गिरक्या घेणारे आणि सोन्यासारखा तेजस्वी प्रकाश पसरवणारे वेगवान चक्र. विविध साईजमध्ये उपलब्ध.
+                        </p>
+                        <div class="product-features">
+                            <span class="pill">लाँग ड्युरेशन फिरणे</span>
+                            <span class="pill">तेजस्वी सोनेरी रिंगण</span>
+                        </div>
+                        <div class="product-status-box">
+                            <span class="availability-badge">✓ दुकानात उपलब्ध</span>
+                            <button type="button" class="btn-inquire" onclick="inquireProduct('चक्र')">चौकशी करा</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 4. रॉकेट -->
+                <article class="product-card">
+                    <div class="card-badge">आकाशी धमाका</div>
+                    <div class="product-img-box">
+                        <img src="assets/images/rocket.jpg" alt="रॉकेट - रुद्र फटाका मार्ट" loading="lazy">
+                        <div class="img-overlay">
+                            <span class="sparkler-anim">🚀</span>
+                        </div>
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-name">रॉकेट</h3>
+                        <p class="product-marathi-tag">(Sky Rockets - आकाशात रंगांची उधळण)</p>
+                        <p class="product-desc">
+                            सणसणत थेट आकाशात जाऊन उंच फुटणारे आणि विविध रंगांचे सुंदर पॅराशूट व स्टार्स तयार करणारे रॉकेट्स.
+                        </p>
+                        <div class="product-features">
+                            <span class="pill">उंच उडणारे</span>
+                            <span class="pill">मल्टिक्लर स्टार्स</span>
+                        </div>
+                        <div class="product-status-box">
+                            <span class="availability-badge">✓ दुकानात उपलब्ध</span>
+                            <button type="button" class="btn-inquire" onclick="inquireProduct('रॉकेट')">चौकशी करा</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 5. भुईचक्र -->
+                <article class="product-card">
+                    <div class="card-badge">विशेष आकर्षण</div>
+                    <div class="product-img-box">
+                        <img src="assets/images/bhuichakra.jpg" alt="भुईचक्र - रुद्र फटाका मार्ट" loading="lazy">
+                        <div class="img-overlay">
+                            <span class="sparkler-anim">🌀</span>
+                        </div>
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-name">भुईचक्र</h3>
+                        <p class="product-marathi-tag">(Ground Spinners - जमिनीवर फिरणारे)</p>
+                        <p class="product-desc">
+                            जमिनीवर गोलाकार फिरताना लाल, हिरवे आणि सोनेरी रंग विखुरणारे विशेष भुईचक्र. कुटुंबातील सर्वांसाठी आनंददायी.
+                        </p>
+                        <div class="product-features">
+                            <span class="pill">मल्टिक्लर लाइट्स</span>
+                            <span class="pill">सुरक्षित जमिनीवर फिरणारे</span>
+                        </div>
+                        <div class="product-status-box">
+                            <span class="availability-badge">✓ दुकानात उपलब्ध</span>
+                            <button type="button" class="btn-inquire" onclick="inquireProduct('भुईचक्र')">चौकशी करा</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 6. रंगीत फटाके (स्काय शॉट्स) -->
+                <article class="product-card">
+                    <div class="card-badge">भव्य रोषणाई</div>
+                    <div class="product-img-box">
+                        <img src="assets/images/rangeet_fatake.jpg" alt="रंगीत फटाके - रुद्र फटाका मार्ट" loading="lazy">
+                        <div class="img-overlay">
+                            <span class="sparkler-anim">🎆</span>
+                        </div>
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-name">रंगीत फटाके</h3>
+                        <p class="product-marathi-tag">(Colour Aerial Shots - १२, ३०, १२० शॉट्स)</p>
+                        <p class="product-desc">
+                            आकाशात एकामागोमाग एक रंगांची मुक्त उधळण करणारे, डोळे दिपवणारे फॅन्सी मल्टिक्लर स्काय शॉट्स व रंगीत शो.
+                        </p>
+                        <div class="product-features">
+                            <span class="pill">भव्य आकाशीय शो</span>
+                            <span class="pill">विविध शॉट्स उपलब्ध</span>
+                        </div>
+                        <div class="product-status-box">
+                            <span class="availability-badge">✓ दुकानात उपलब्ध</span>
+                            <button type="button" class="btn-inquire" onclick="inquireProduct('रंगीत फटाके (स्काय शॉट्स)')">चौकशी करा</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 7. लड फटाके (माळ) -->
+                <article class="product-card">
+                    <div class="card-badge">पारंपरिक आवाज</div>
+                    <div class="product-img-box">
+                        <img src="assets/images/lad_fatake.jpg" alt="लड फटाके - रुद्र फटाका मार्ट" loading="lazy">
+                        <div class="img-overlay">
+                            <span class="sparkler-anim">🧨</span>
+                        </div>
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-name">फटाक्यांची माळ (लड)</h3>
+                        <p class="product-marathi-tag">(Garland Crackers - १००, १०००, ५००० लड)</p>
+                        <p class="product-desc">
+                            दिवाळी पहाट आणि लक्ष्मीपूजनासाठी आवश्यक असणारी अस्सल आवाजाची अखंड वाजणारी फटाक्यांची माळ.
+                        </p>
+                        <div class="product-features">
+                            <span class="pill">अस्सल पारंपरिक आवाज</span>
+                            <span class="pill">सर्व साईजमध्ये उपलब्ध</span>
+                        </div>
+                        <div class="product-status-box">
+                            <span class="availability-badge">✓ दुकानात उपलब्ध</span>
+                            <button type="button" class="btn-inquire" onclick="inquireProduct('फटाक्यांची माळ (लड)')">चौकशी करा</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 8. मुलांचे फॅन्सी फटाके -->
+                <article class="product-card">
+                    <div class="card-badge">लहान मुलांचे खास</div>
+                    <div class="product-img-box">
+                        <img src="assets/images/kids_crackers.jpg" alt="मुलांचे सुरक्षित फटाके - रुद्र फटाका मार्ट" loading="lazy">
+                        <div class="img-overlay">
+                            <span class="sparkler-anim">👶</span>
+                        </div>
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-name">मुलांचे सुरक्षित फटाके</h3>
+                        <p class="product-marathi-tag">(Kids Safe Novelty - पॉप-पॉप, पेन्सिल, कार्टून)</p>
+                        <p class="product-desc">
+                            लहान मुलांसाठी खास बनवलेले बिनधोक, आवाज नसलेले, केवळ रंगीत प्रकाश आणि आनंद देणारे खेळण्यांसारखे फटाके.
+                        </p>
+                        <div class="product-features">
+                            <span class="pill">१००% सुरक्षित व बिनधोक</span>
+                            <span class="pill">मुलांसाठी खास डिझाईन</span>
+                        </div>
+                        <div class="product-status-box">
+                            <span class="availability-badge">✓ दुकानात उपलब्ध</span>
+                            <button type="button" class="btn-inquire" onclick="inquireProduct('मुलांचे सुरक्षित फटाके')">चौकशी करा</button>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- Inquire Note -->
+            <div class="category-note">
+                <p>📌 <strong>टीप:</strong> वरील सर्व फटाके स्टॉल नंबर ४२ वर भरपूर प्रमाणात उपलब्ध आहेत. थेट स्टॉलला भेट द्या किंवा उपलब्धतेबद्दल अधिक माहितीसाठी आमच्याशी फोनवर संपर्क साधा.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Diwali Section (Mandatory Messages & Festive Experience) -->
+    <section class="special-diwali-section" id="special-diwali">
+        <div class="festive-lamps-bg" aria-hidden="true">
+            <span class="kandil k-1">🏮</span>
+            <span class="kandil k-2">🏮</span>
+            <span class="kandil k-3">🏮</span>
+        </div>
+        
+        <div class="container special-diwali-inner">
+            <div class="festive-badge">
+                <span class="star-sparkle">✨</span>
+                दीपावली पर्व विशेष
+                <span class="star-sparkle">✨</span>
+            </div>
+
+            <!-- Mandatory Marathi Quotes -->
+            <h2 class="festive-quote-main">
+                "या दिवाळीत आपल्या आनंदात भर घाला!"
+            </h2>
+
+            <div class="quote-ornament">
+                <span class="diya-glow">🪔</span>
+            </div>
+
+            <p class="festive-quote-sub">
+                "आपली दिवाळी आनंदाची आणि प्रकाशमय जावो!"
+            </p>
+
+            <div class="festive-blessing-card">
+                <p class="blessing-marathi">
+                    दिवाळी म्हणजे प्रकाशाचा, मांगल्याचा आणि आनंदाचा सण! रुद्र फटाका मार्टच्या वतीने शेवगाव शहर आणि पंचक्रोशीतील तमाम बंधू-भगिनी, शेतकरी बांधव आणि लाडक्या चिमुकल्यांना दीपावलीच्या, लक्ष्मीपूजनाच्या आणि पाडव्याच्या लक्ष लक्ष मंगलमय शुभेच्छा!
+                </p>
+                
+                <div class="festive-features-row">
+                    <div class="feat-box">
+                        <span class="feat-icon">🪔</span>
+                        <h4>प्रकाशाचा उत्सव</h4>
+                        <p>घरोघरी पणत्या आणि आकाशात रंगांची मनमोहक उधळण.</p>
+                    </div>
+                    <div class="feat-box">
+                        <span class="feat-icon">❤️</span>
+                        <h4>विश्वासू सेवा</h4>
+                        <p>वाजवी भाव आणि ग्राहकांच्या आनंदाला प्रथम प्राधान्य.</p>
+                    </div>
+                    <div class="feat-box">
+                        <span class="feat-icon">🛡️</span>
+                        <h4>सुरक्षित सण</h4>
+                        <p>गुणवत्तापूर्ण फटाक्यांसह दिवाळी साजरी करा सुरक्षितपणे.</p>
+                    </div>
+                </div>
+
+                <div class="special-actions">
+                    <button type="button" class="btn-burst-fireworks" id="burstNowBtn">
+                        🎆 फटाक्यांची आतषबाजी पहा (येथे दाबा)
+                    </button>
+                    <button type="button" class="btn-share-shop" id="shareShopBtn">
+                        📲 मित्र व परिवाराला व्हॉट्सॲपवर पाठवा
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Responsible-Use & Safety Guidelines Section (Mandatory Requirement) -->
+    <section class="safety-section" id="safety">
+        <div class="container">
+            <div class="safety-card">
+                <div class="safety-header">
+                    <span class="safety-badge">सुरक्षा संदेश व नियमांचे पालन</span>
+                    <h2 class="safety-title">फटाके उडवताना घ्यावयाची काळजी व मार्गदर्शक सूचना</h2>
+                    <p class="safety-subtitle">दिवाळीचा आनंद सुरक्षिततेतच आहे. कृपया खालील सूचनांचे अवश्य पालन करा.</p>
+                </div>
+
+                <div class="safety-rules-grid">
+                    <div class="safety-rule-item">
+                        <div class="rule-number">१</div>
+                        <div class="rule-content">
+                            <h4>नेहमी मोकळ्या जागेत फटाके उडवा</h4>
+                            <p>घराच्या आत, अरुंद गल्लीत, किंवा विजेच्या तारांखाली फटाके उडवू नका. नेहमी मोकळ्या पटांगणावर फटाके उडवावेत.</p>
+                        </div>
+                    </div>
+
+                    <div class="safety-rule-item">
+                        <div class="rule-number">२</div>
+                        <div class="rule-content">
+                            <h4>लहान मुलांवर नेहमी मोठ्यांचे लक्ष असावे</h4>
+                            <p>लहान मुलांना एकटे फटाके उडवू देऊ नका. मोठ्या व्यक्तींनी सोबत राहून योग्य अंतरावरून मार्गदर्शन करावे.</p>
+                        </div>
+                    </div>
+
+                    <div class="safety-rule-item">
+                        <div class="rule-number">३</div>
+                        <div class="rule-content">
+                            <h4>पाण्याची बादली किंवा वाळू जवळ ठेवा</h4>
+                            <p>फटाके उडवताना सुरक्षिततेचा उपाय म्हणून जवळ नेहमी पाण्याने भरलेली बादली किंवा वाळू तयार ठेवावी.</p>
+                        </div>
+                    </div>
+
+                    <div class="safety-rule-item">
+                        <div class="rule-number">४</div>
+                        <div class="rule-content">
+                            <h4>सुती (कॉटन) कपडे परिधान करा</h4>
+                            <p>फटाके उडवताना नायलॉन किंवा रेशमी कपडे टाळावेत. शरीराला सुरक्षित असणारे सुती कपडे वापरावेत.</p>
+                        </div>
+                    </div>
+
+                    <div class="safety-rule-item">
+                        <div class="rule-number">५</div>
+                        <div class="rule-content">
+                            <h4>न फुटलेल्या फटाक्याजवळ जाऊ नका</h4>
+                            <p>काही फटाके लगेच फुटत नाहीत. अशा फटाक्यांकडे त्वरित वाकून पाहू नका किंवा पुन्हा पेटवण्याचा प्रयत्न करू नका; त्यावर पाणी टाका.</p>
+                        </div>
+                    </div>
+
+                    <div class="safety-rule-item">
+                        <div class="rule-number">६</div>
+                        <div class="rule-content">
+                            <h4>स्थानिक नियम व वेळेचे पालन करा</h4>
+                            <p>शासनाने व स्थानिक प्रशासनाने दिलेल्या वेळेनुसार आणि ध्वनी मर्यादेचे पालन करून सर्वांना सुखद अशी दिवाळी साजरी करा.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="safety-footer-note">
+                    <p>🌿 <strong>रुद्र फटाका मार्टचे आवाहन:</strong> सुरक्षित दिवाळी, आनंदी दिवाळी! नियमांचे पालन करा आणि आपल्या कुटुंबाची काळजी घ्या.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop Location & Google Maps Section -->
+    <section class="location-section" id="location">
+        <div class="container">
+            <div class="section-title-wrap">
+                <span class="section-badge">दुकान पत्ता व नकाशा</span>
+                <h2 class="section-title">आमचे दुकान कुठे आहे ते पहा</h2>
+                <div class="title-underline">
+                    <span class="sparkle">✦</span>
+                    <span class="line"></span>
+                    <span class="diya">🪔</span>
+                    <span class="line"></span>
+                    <span class="sparkle">✦</span>
+                </div>
+                <p class="section-subtitle">शेवगावमधील मुख्य खंडोबानगर फटाका मैदान येथे आमचा स्टॉल नंबर ४२ आहे.</p>
+            </div>
+
+            <div class="location-card-wrapper">
+                <!-- Address Card Details -->
+                <div class="address-details-card">
+                    <div class="stall-badge-gold">
+                        <span class="badge-icon">🎪</span>
+                        <div class="badge-texts">
+                            <span class="stall-title">स्टॉल नंबर ४२</span>
+                            <span class="stall-sub">RUDRA FATAKA MART - STALL 42</span>
+                        </div>
+                    </div>
+
+                    <h3 class="shop-name-marathi">रुद्र फटाका मार्ट</h3>
+
+                    <div class="address-lines">
+                        <div class="address-row">
+                            <span class="addr-icon">📍</span>
+                            <div class="addr-text">
+                                <strong>पत्ता:</strong>
+                                <p>खंडोबानगर, स्टॉल नं. ४२, शेवगाव</p>
+                                <p>ता. शेवगाव, जि. अहिल्यानगर</p>
+                            </div>
+                        </div>
+
+                        <div class="address-row">
+                            <span class="addr-icon">🛣️</span>
+                            <div class="addr-text">
+                                <strong>खूण (Landmark):</strong>
+                                <p>खंडोबानगर फटाका स्टॉल मैदान, शेवगाव</p>
+                            </div>
+                        </div>
+
+                        <div class="address-row">
+                            <span class="addr-icon">⏰</span>
+                            <div class="addr-text">
+                                <strong>वेळ:</strong>
+                                <p>सकाळी ८:०० ते रात्री ११:०० (सर्व दिवस सुरू)</p>
+                            </div>
+                        </div>
+
+                        <div class="address-row">
+                            <span class="addr-icon">📞</span>
+                            <div class="addr-text">
+                                <strong>संपर्क:</strong>
+                                <p>ऋषिकेश वावरे: <a href="tel:8669710695">8669710695</a></p>
+                                <p>भारत म्हस्के: <a href="tel:9604091262">9604091262</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Configurable Google Maps Button -->
+                    <div class="map-action-btns">
+                        <a href="https://maps.google.com/?q=Khandobanagar,+Shevgaon,+Ahilyanagar,+Maharashtra+414502" target="_blank" rel="noopener" class="btn-google-maps" id="googleMapsLink">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                            Google Maps वर रस्ता पहा (दिशा दाखवा)
+                        </a>
+                        <button type="button" class="btn-copy-address" id="copyAddressBtn">
+                            📋 पत्ता कॉपी करा
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Interactive Embedded Map Container -->
+                <div class="map-frame-box">
+                    <div class="map-header-bar">
+                        <span class="map-dot"></span>
+                        <span class="map-title-label">खंडोबानगर, शेवगाव - लाईव्ह नकाशा</span>
+                    </div>
+                    <iframe 
+                        title="रुद्र फटाका मार्ट शेवगाव नकाशा"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15053.486259062325!2d75.2917!3d19.3364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdba067a9a1a2b1%3A0x6b63d030999059f!2sShevgaon%2C%20Maharashtra%20414502!5e0!3m2!1smr!2sin!4v1700000000000!5m2!1smr!2sin" 
+                        width="100%" 
+                        height="380" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                    <div class="map-footer-help">
+                        <span>💡 शेवगावमध्ये येऊन 'खंडोबानगर फटाका स्टॉल्स' विचारल्यास कोणीही पत्ता सांगेल. स्टॉल नं. ४२ वर आपले स्वागत आहे!</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Footer -->
+    <footer class="site-footer">
+        <!-- Decorative Rangoli / Diya Pattern Bar -->
+        <div class="footer-decorative-strip" aria-hidden="true">
+            <span class="diya-item">🪔</span>
+            <span class="diya-item">✨</span>
+            <span class="diya-item">🪔</span>
+            <span class="diya-item">✨</span>
+            <span class="diya-item">🪔</span>
+            <span class="diya-item">✨</span>
+            <span class="diya-item">🪔</span>
+        </div>
+
+        <div class="container footer-content">
+            <div class="footer-grid">
+                <!-- Col 1: Shop Brand -->
+                <div class="footer-col">
+                    <h3 class="footer-shop-title">रुद्र फटाका मार्ट</h3>
+                    <p class="footer-tagline">आपल्या दिवाळीचा आनंद द्विगुणित करा!</p>
+                    <p class="footer-desc">
+                        शेवगाव शहर व तालुक्यातील नागरिकांसाठी अस्सल, दर्जेदार आणि सुरक्षित फटाक्यांचे हक्काचे दालन. स्टॉल नंबर ४२ वर अवश्य भेट द्या.
+                    </p>
+                    <div class="footer-stall-pill">
+                        🎪 स्टॉल नं. ४२, खंडोबानगर, शेवगाव
+                    </div>
+                </div>
+
+                <!-- Col 2: Owners & Direct Contact (Preserved Exactly) -->
+                <div class="footer-col">
+                    <h4 class="footer-heading">दुकान मालक व संपर्क</h4>
+                    <ul class="footer-contact-list">
+                        <li>
+                            <strong class="owner-tag">प्रोप्रा. ऋषिकेश वावरे</strong>
+                            <a href="tel:8669710695" class="footer-contact-link">📞 8669710695</a>
+                        </li>
+                        <li>
+                            <strong class="owner-tag">प्रोप्रा. भारत म्हस्के</strong>
+                            <a href="tel:9604091262" class="footer-contact-link">📞 9604091262</a>
+                        </li>
+                    </ul>
+                    <div class="footer-wa-quick">
+                        <button type="button" class="btn-footer-wa" onclick="openContactModal('whatsapp')">
+                            💬 व्हॉट्सॲपवर मेसेज करा
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Col 3: Address & Quick Links -->
+                <div class="footer-col">
+                    <h4 class="footer-heading">दुकान पत्ता</h4>
+                    <p class="footer-address-text">
+                        खंडोबानगर, स्टॉल नं. ४२, शेवगाव<br>
+                        ता. शेवगाव, जि. अहिल्यानगर<br>
+                        पिन कोड: ४१४५०२
+                    </p>
+                    <div class="footer-links">
+                        <a href="#home">मुख्य पृष्ठ</a> •
+                        <a href="#products">फटाक्यांचे प्रकार</a> •
+                        <a href="#location">नकाशा</a> •
+                        <a href="#safety">सुरक्षा नियम</a>
+                    </div>
+                    <p class="diwali-wishes-footer">
+                        ॥ आपली दिवाळी आनंदाची, आरोग्याची आणि भरभराटीची जावो ॥
+                    </p>
+                </div>
+            </div>
+
+            <!-- MANDATORY REQUIREMENT: Developer Credit Section -->
+            <div class="developer-credit-section">
+                <div class="credit-divider"></div>
+                <div class="credit-box">
+                    <p class="credit-prefix">Website Designed & Developed By</p>
+                    <p class="credit-author">Shubham Wavare</p>
+                    <p class="credit-tribute">"Made with ❤️ for RUDRA FATAKA MART"</p>
+                </div>
+                <p class="copyright-text">
+                    © 2026 रुद्र फटाका मार्ट, शेवगाव. सर्व हक्क राखीव.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Sticky Quick-Action Bar (Ultra-helpful for rural smartphone users) -->
+    <aside class="mobile-sticky-action-bar" aria-label="त्वरित संपर्क">
+        <button type="button" class="bar-btn bar-btn-call" onclick="openContactModal('call')">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            <span>कॉल करा</span>
+        </button>
+
+        <button type="button" class="bar-btn bar-btn-whatsapp" onclick="openContactModal('whatsapp')">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm5.78 14.07c-.24.68-1.39 1.3-1.92 1.38-.49.07-1.12.1-3.23-.77-2.7-1.12-4.44-3.87-4.57-4.05-.14-.18-1.09-1.45-1.09-2.77 0-1.32.69-1.97.94-2.23.24-.26.54-.33.72-.33.18 0 .36 0 .52.01.17.01.4.06.61.57.24.57.81 1.97.88 2.12.07.15.12.33.02.53-.09.2-.15.33-.29.5-.15.17-.31.38-.44.51-.15.15-.3.31-.13.61.17.29.76 1.25 1.63 2.02 1.12.99 2.07 1.3 2.36 1.45.29.15.46.13.63-.07.17-.2.74-.86.94-1.16.2-.29.4-.24.68-.14.28.1 1.78.84 2.08.99.3.15.51.23.58.36.07.12.07.72-.17 1.4z"/></svg>
+            <span>WhatsApp</span>
+        </button>
+
+        <a href="#location" class="bar-btn bar-btn-map">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            <span>दुकान पत्ता</span>
+        </a>
+    </aside>
+
+    <!-- Quick Contact Modal for Selecting Owner (Calls & WhatsApp) -->
+    <div class="contact-modal" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-overlay" onclick="closeContactModal()"></div>
+        <div class="modal-card">
+            <button type="button" class="modal-close-btn" onclick="closeContactModal()" aria-label="बंद करा">&times;</button>
+            <div class="modal-header">
+                <span class="modal-icon" id="modalHeaderIcon">📞</span>
+                <h3 id="modalTitle">कोणाशी संपर्क करायचा आहे ते निवडा</h3>
+                <p id="modalSubtitle">रुद्र फटाका मार्ट, स्टॉल नं. ४२, शेवगाव</p>
+            </div>
+
+            <div class="modal-options">
+                <!-- Option 1: ऋषिकेश वावरे -->
+                <div class="modal-option-card">
+                    <div class="m-avatar">ऋ</div>
+                    <div class="m-info">
+                        <h4>प्रोप्रा. ऋषिकेश वावरे</h4>
+                        <p class="m-phone">फोन: 8669710695</p>
+                    </div>
+                    <div class="m-action">
+                        <a href="tel:8669710695" class="m-btn btn-call-primary action-call-rishikesh">
+                            📞 कॉल करा
+                        </a>
+                        <a href="https://wa.me/918669710695?text=नमस्कार%20ऋषिकेशजी,%20मला%20रुद्र%20फटाका%20मार्ट%20(स्टॉल%20४२)%20मधील%20फटाक्यांविषयी%20चौकशी%20करायची%20आहे." target="_blank" rel="noopener" class="m-btn btn-wa-primary action-wa-rishikesh">
+                            💬 WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Option 2: भारत म्हस्के -->
+                <div class="modal-option-card">
+                    <div class="m-avatar">भा</div>
+                    <div class="m-info">
+                        <h4>प्रोप्रा. भारत म्हस्के</h4>
+                        <p class="m-phone">फोन: 9604091262</p>
+                    </div>
+                    <div class="m-action">
+                        <a href="tel:9604091262" class="m-btn btn-call-primary action-call-bharat">
+                            📞 कॉल करा
+                        </a>
+                        <a href="https://wa.me/919604091262?text=नमस्कार%20भारतजी,%20मला%20रुद्र%20फटाका%20मार्ट%20(स्टॉल%20४२)%20मधील%20फटाक्यांविषयी%20चौकशी%20करायची%20आहे." target="_blank" rel="noopener" class="m-btn btn-wa-primary action-wa-bharat">
+                            💬 WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <p>🎪 स्टॉल नं. ४२, खंडोबानगर, शेवगाव</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toastNotification" class="toast-notification" role="status" aria-live="polite"></div>
+
+    <!-- Main JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
